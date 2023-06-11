@@ -17,7 +17,7 @@ class ShopPersistence(ABC):
         ...
 
     @abstractmethod
-    def get_by_id(self, product_id: int)-> Shop:
+    def get_product_by_id(self, product_id: int)-> Shop:
         ...
         
     @abstractmethod
@@ -27,3 +27,8 @@ class ShopPersistence(ABC):
     @abstractmethod
     def buy(self, product_id: int, amount:int)-> Shop:
         ...
+
+    @abstractmethod
+    def get_product_by_name(self, product_name: str)-> Shop:
+        ...
+    

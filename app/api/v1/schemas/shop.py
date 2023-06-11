@@ -28,6 +28,17 @@ class ShopPurchaseResponseSchema(BaseModel):
     create_time:str
     update_time:str
 
+class ShopGetByNameRequestSchema(BaseModel):
+    product_name:str
+
+class ShopGetByNameResponseSchema(BaseModel):
+    id: int
+    name: str
+    description: str
+    count_left:int
+    create_time:str
+    update_time:str
+
 class ShopSchema(BaseModel):
     id: int
     name: str

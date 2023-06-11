@@ -17,7 +17,7 @@ class ShopModel(SQLModel, table=True):
     )
 
     description:str =Field(
-        max_length=100,
+        max_length=1000,
         unique=True  
     )
 

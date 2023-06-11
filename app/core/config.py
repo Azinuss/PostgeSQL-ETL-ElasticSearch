@@ -9,6 +9,8 @@ class Settings(BaseSettings):
     DB_HOSTNAME:str
     DB_PORT:int
 
+    ELASTIC_HOST:str
+    ELASTIC_PORT:int
     class Config:
         env_file = ".env"
     
