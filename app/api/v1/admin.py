@@ -1,5 +1,4 @@
 from datetime import datetime
-from typing import List, Union
 
 from fastapi import APIRouter, Depends
 
@@ -11,7 +10,7 @@ from persistence.common import ShopPersistence
 router = APIRouter()
 
 
-@router.post("/create", summary="Create product", description="Create product for sale",
+@router.post("/create", summary="Create product", description="Add new in DB product for sale",
              response_model=ShopCreateResponseSchema)
 async def create_product(create_request: ShopCreateRequestSchema,
                        shop_persistence :ShopPersistence = Depends(shop_persistence_dependency)) -> ShopCreateRequestSchema:
@@ -20,7 +19,7 @@ async def create_product(create_request: ShopCreateRequestSchema,
     return ShopCreateResponseSchema(id=product.id)
 
 
-@router.delete("/delete", summary="Delete product", description="Delete product",
+@router.delete("/delete", summary="Delete product", description="Delete product from DB",
              response_model=ShopDeleteResponseSchema)
 async def delete_product(delete_request: ShopDeleteRequestSchema,
                        shop_persistence: ShopPersistence = Depends(shop_persistence_dependency)) -> ShopDeleteRequestSchema:
